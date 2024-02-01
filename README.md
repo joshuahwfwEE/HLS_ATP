@@ -5,7 +5,7 @@ this repos gives an example for explain some HLS basic concept and a shift patte
 1. shift pattern generator:  
    block-level-protocal: ap_ctrl_hs 
    port-level-protocal: ap_vld  
-   
+   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/shift_pattern_ap_ctrl_hs.png?raw=true)
    this module can implement a pattern generator that can output following consistently:  
    3b'110 => 3b'101 => 3b'011 => 3b'110  //(6=>5=>3=>6) consistently while be given a constant 3b'110  
    3b'110 is the first given data to input led_i  
@@ -15,8 +15,9 @@ this repos gives an example for explain some HLS basic concept and a shift patte
    ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/HLS_shift_pattern1.png?raw=true)
 
    we keep the same code logic but change the block and port level protocal into:  
-   block-level-protocal: ap_ctrl_hs 
-   port-level-protocal: ap_vld
+   block-level-protocal: ap_ctrl_hs  
+   port-level-protocal: ap_vld  
+   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/shift_pattern_ap_ctrl_none.png?raw=true)
    
 3. foo:  
    this module implement an adder and a multplier and a latch in this circuit,
