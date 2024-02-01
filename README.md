@@ -3,8 +3,8 @@ this repos gives an example for explain some HLS basic concept and a shift patte
 
 
 1. shift pattern generator:  
-   block-level-protocal: ap_ctrl_hs 
-   port-level-protocal: ap_vld    
+   block-level-protocol: ap_ctrl_hs 
+   port-level-protocol: ap_vld    
    ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/shift_pattern_ap_ctrl_hs.png?raw=true)
    
    this module can implement a pattern generator that can output following consistently:  
@@ -16,9 +16,9 @@ this repos gives an example for explain some HLS basic concept and a shift patte
    xsim c/rtl cosimulation result:  
    ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/HLS_shift_pattern1.png?raw=true)  
 
-   we keep the same code logic but change the block and port level protocal into:  
-   block-level-protocal: ap_ctrl_hs  
-   port-level-protocal: ap_vld  
+   we keep the same code logic but change the block and port level protocol into:  
+   block-level-protocol: ap_ctrl_hs  
+   port-level-protocol: ap_vld  
    ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/shift_pattern_ap_ctrl_none.png?raw=true)
    
 3. foo:  
