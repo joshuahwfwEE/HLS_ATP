@@ -6,27 +6,6 @@
 //#define ap_ctrl_hs
 
 
-void shift_pattern_gen_top(led_t *led_o, led_t first_value)
-{
-#ifdef ap_ctrl_hs /*for ap_ctrl_hs mode ( used for co-simulation)*/
- #pragma HLS INTERFACE mode=ap_ovld port=led_o
- #pragma HLS INTERFACE mode=ap_vld port=first_value
-#endif
-
-#ifdef ap_ctrl_none
-#pragma HLS INTERFACE ap_ctrl_none port=return
-#pragma HLS INTERFACE ap_none port=led_o
-#pragma HLS INTERFACE ap_none port=first_value
-#endif
-
-	led_t tmp_o; //first output
-
-	shift_pattern_gen(&tmp_o, first_value);
-	shift_pattern_gen(led_o, tmp_o);
-
-}
-
-
 void shift_pattern_gen(led_t *led_o, led_t led_i)
 {
 
@@ -42,7 +21,7 @@ void shift_pattern_gen(led_t *led_o, led_t led_i)
 	#pragma HLS INTERFACE ap_none port=led_i
 	#pragma HLS INTERFACE ap_none port=led_o
 #endif
-        led_t temp_led; //buffer for input: led_i_buf
+        led_t temp_led; //buffer for input: led_i
         cnt_32_t i;    //used for for loop variable i
 
         temp_led = led_i;
