@@ -29,7 +29,7 @@ this repos gives an example for explain some HLS basic concept and a shift patte
    this module implement an adder and a multplier and a latch in this circuit,
    adder takes l2 and Latch's output as its inputs and then multiplier takes adder's output and l1 as its inputs
 
-   given an example design of testing this logic circult:  
+   given an example design of testing the combination logic of above 2 module:    
     ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/design1_pattern_plus_foo.png?raw=true)    
 
 5. two foo:  
