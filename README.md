@@ -20,6 +20,9 @@ this repos gives an example for explain some HLS basic concept and a shift patte
    block-level-protocol: ap_ctrl_hs  
    port-level-protocol: ap_vld  
    ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/shift_pattern_ap_ctrl_none.png?raw=true)
+
+   you can check the resource usage and latency:
+   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/synthesis_graph.png?raw=true)
    
 3. foo:  
    this module implement an adder and a multplier and a latch in this circuit,
