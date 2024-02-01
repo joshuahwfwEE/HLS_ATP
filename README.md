@@ -2,11 +2,13 @@
 this repos gives an example for explain some HLS basic concept and a shift pattern generator lab, and talk about some data dependency issue and pipeline and how to use co-simulation  
 
 
-1. shift pattern generator:
-   block-level-protocal: ap_ctrl_none
-   this module cam implement a pattern generator that can output following consistently:
+1. shift pattern generator:  
+   block-level-protocal: ap_ctrl_none  
+   port-level-protocal: ap_vld  
+   
+   this module cam implement a pattern generator that can output following consistently:  
    3b'110 => 3b'101 => 3b'011 => 3b'110  //(6=>5=>3=>6) consistently while be given a constant 3b'110  
-   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/HLS_shift_pattern1.png?raw=true)
+   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/HLS_shift_pattern1.png?raw=true)  
    
 3. foo:  
    this module implement an adder and a multplier and a latch in this circuit,
