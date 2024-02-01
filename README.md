@@ -1,5 +1,5 @@
 # HLS_ATP
-this repos gives an example for explain some HLS basic concept and a shift pattern generator lab, and talk about some data dependency issue and pipeline  
+this repos gives an example for explain some HLS basic concept and a shift pattern generator lab, and talk about some data dependency issue and pipeline and how to use co-simulation  
 
 
 1. shift pattern generator:
