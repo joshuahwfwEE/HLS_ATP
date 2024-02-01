@@ -20,7 +20,7 @@ typedef ap_fixed<32,32> cnt_32_t; //datawidth=32 integer bit =32
 //typedef int cnt_32_t;
 
 
-void shift_pattern_gen(led_t *led_o, led_t led_i);   //logic function
-void shift_pattern_gen_top(led_t *led_o, led_t first_value); //top function
+void shift_pattern_gen(led_t *led_o, led_t led_i);   //top function
+
 
 #endif
