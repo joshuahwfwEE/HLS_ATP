@@ -25,7 +25,7 @@ this repos gives an example for explain some HLS basic concept and a shift patte
    ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/synthesis_graph.png?raw=true)
 
    and then if we add extra loop at top without pipelined,  we will get:  
-   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/top.png?raw=true)  
+   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/looptop.png?raw=true)  
    we can notice the latency incresing twice, while the resource uasge is still as the same.
 
    
