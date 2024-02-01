@@ -22,7 +22,10 @@ this repos gives an example for explain some HLS basic concept and a shift patte
    ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/shift_pattern_ap_ctrl_none.png?raw=true)  
 
    you can check the resource usage and latency:  
-   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/synthesis_graph.png?raw=true)  
+   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/synthesis_graph.png?raw=true)
+
+   and then if we add extra loop without pipeline,  we will get:
+   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/top.png?raw=true)
 
    
 3. foo:  
