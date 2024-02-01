@@ -9,7 +9,7 @@ this repos gives an example for explain some HLS basic concept and a shift patte
    this module can implement a pattern generator that can output following consistently:  
    3b'110 => 3b'101 => 3b'011 => 3b'110  //(6=>5=>3=>6) consistently while be given a constant 3b'110  
    3b'110 is the first given data to input led_i  
-   because we set SHIFT_TIME=6, so it repeat the loop for 6 six time and then assert ap_idle high and stop the operation   
+   because we set SHIFT_TIME=6 in testbench, so it repeat the loop for 6 six time and then assert ap_idle high and stop the operation   
    ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/HLS_shift_pattern1.png?raw=true)  
    
 3. foo:  
