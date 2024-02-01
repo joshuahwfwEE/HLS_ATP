@@ -27,7 +27,9 @@ this repos gives an example for explain some HLS basic concept and a shift patte
    and then if we add extra loop at top without pipelined,  we will get:  
    ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/looptop.png?raw=true)  
    we can notice the latency incresing, because we reuse the resource uasge again and again.
-
+   
+   xsim c/rtl cosimulation result:  
+  ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/looptop_sim.png?raw=true)    
 
    if we use more resource to implement this circult:
    
