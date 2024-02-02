@@ -42,9 +42,12 @@ this repos gives an example for explain some HLS basic concept and a shift patte
  
  result 2 update multiple times during a loop (the period of updating the output is 10ns(as same as the clk)),  
  and then assert idle and then restart the loop (idle period is 540.500ns)  
- ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/addbufinloopsyth.png?raw=true)   
+ ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/addbufinloopsyth.png?raw=true)  
 
- simulation result in vivado:    
+ vivado block design:  
+ ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/shift_pattern_gen_loopwithbuffer_bd.png?raw=true)  
+
+ simulation result in vivado:  
  ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/shift_pattern_gen_loopwithbuffer_wcfg.png?raw=true)    
 
    if we use more resource to implement this circult:
