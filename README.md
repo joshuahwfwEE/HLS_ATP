@@ -30,7 +30,10 @@ this repos gives an example for explain some HLS basic concept and a shift patte
    
    
    xsim c/rtl cosimulation result:  
-  ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/looptop_sim.png?raw=true)    
+  ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/looptop_sim.png?raw=true)
+
+ in some case we may need to increasing the task interval latency, it can be achieved by simply adding some buffer in the loop.  
+ ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/addbufinloop.png?raw=true)  
 
    if we use more resource to implement this circult:
    
