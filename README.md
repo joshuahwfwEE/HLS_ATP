@@ -35,6 +35,10 @@ this repos gives an example for explain some HLS basic concept and a shift patte
  in some case we may need to increasing the task interval latency, it can be achieved by simply adding some buffer in the loop.  
  ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/addbufinloop.png?raw=true)  
 
+ the difference of above 2 result is the task interval,  
+ result 1 update output once in each loop  
+ result 2 update multiple times during a loop (the period of updating the output is 9,500ns), and then assert idle and then restart the loop (idle period is 540,500ns)  
+
    if we use more resource to implement this circult:
    
 
