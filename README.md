@@ -42,8 +42,11 @@ ap_ctrl_none mode:
    we can notice the latency incresing, because we reuse the same resource again and again for 48 times( 2400/50=48 is the value of SHIFT_FLAG).
    
    
-   xsim c/rtl cosimulation result:  
+   xsim c/rtl cosimulation result(ap_ctrl_hs):  
   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/looptop_sim.png?raw=true)  
+
+  vivado simulation result(ap_ctrl_none):  
+  ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/sim1.png?raw=true)  
 
   resource usage:  
 ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/usage1.png?raw=true)  
