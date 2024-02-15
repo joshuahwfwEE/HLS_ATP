@@ -2,17 +2,25 @@
 this repos gives an example for explain some HLS basic concept and a shift pattern generator lab, and talk about some data dependency issue and pipeline and how to use co-simulation  
 
 
-1. shift pattern generator:     
-   block-level-protocol: ap_ctrl_hs vs ap_ctrl_none 
-   port-level-protocol: ap_vld      
+1. shift pattern generator:
+
+   this module implement a pattern generator that can output a fix shifting value regularly and consistently:    
+   3b'110 => 3b'101 => 3b'011 => 3b'110  //(6=>5=>3=>6) consistently while be given a constant 3b'110    
+   3b'110 is the first given data to input led_i in top.v      
+   
+we can configuration 2 mode:  
+
+ap_ctrl_hs mode:  
    ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/shift_pattern_ap_ctrl_hs.png?raw=true)  
    
-   this module can implement a pattern generator that can output following consistently:    
-   3b'110 => 3b'101 => 3b'011 => 3b'110  //(6=>5=>3=>6) consistently while be given a constant 3b'110    
-   3b'110 is the first given data to input led_i    
-   because we set SHIFT_TIME=6 in testbench, so it repeat the loop for 6 times and then assert ap_idle high and stop the operation  
+ap_ctrl_none mode:   
+  ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/shift_pattern_ap_ctrl_none.png?raw=true)  
+
+  
    
-   notice: ap_ctrl_none support cosimulation in few cases, but this case doesn't supported    
+   notice: ap_ctrl_none support cosimulation in few cases, but this case doesn't supported  
+   because we set SHIFT_TIME=6 in testbench, so it repeat the loop for 6 times and then assert ap_idle high and stop the operation in following co-sim result
+   
    xsim c/rtl cosimulation result:    
    ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/HLS_shift_pattern1.png?raw=true)    
 
@@ -73,9 +81,14 @@ this repos gives an example for explain some HLS basic concept and a shift patte
    this module implement a filter that is common used in filter low-pass, high-pass, bandpass ...etc
    if we use gcc comiler such as mb-gcc compiler to compile this code and run in microblaze,
    the assmblely code:
-   we can analysis the latency its takes although its have been already optimized by the compiler, it stll need load and store operation because its von neumann architecture
+   we can analysis the latency its takes although its have been already optimized by the compiler, it stll need load and store operation because its von neumann architecture trasfer to hls:
 
-   trasfer to hls:
+
+question:  
+1. how to solve timing violation in hls stage:
+sol: according your code 
+
+  
 
    use unrolled and pipelined:
    
