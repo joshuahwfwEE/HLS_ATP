@@ -28,10 +28,6 @@ ap_ctrl_none mode:
    ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/HLS_shift_pattern1.png?raw=true)    
 
 
-   we keep the same code logic but change the block and port level protocol into:    
-   block-level-protocol: ap_ctrl_hs    
-   port-level-protocol: ap_vld    
-   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/shift_pattern_ap_ctrl_none.png?raw=true)  
 
    you can check the resource usage and latency:  
    ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/synthesis_graph.png?raw=true)
