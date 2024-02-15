@@ -11,18 +11,22 @@ this repos gives an example for explain some HLS basic concept and a shift patte
 we can configuration 2 mode:  
 
 ap_ctrl_hs mode:  
+   block-level-protocol: ap_ctrl_hs    
+   port-level-protocol: ap_vld    
    ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/shift_pattern_ap_ctrl_hs.png?raw=true)  
    
 ap_ctrl_none mode:   
+   block-level-protocol: ap_ctrl_none    
+   port-level-protocol: ap_none      
   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/shift_pattern_ap_ctrl_none.png?raw=true)  
 
-  
-   
-   notice: ap_ctrl_none support cosimulation in few cases, but this case doesn't supported  
+     
+   notice: ap_ctrl_none support cosimulation in few cases, but this case doesn't supported, so I use ap_ctrl_hs for co-sim.    
    because we set SHIFT_TIME=6 in testbench, so it repeat the loop for 6 times and then assert ap_idle high and stop the operation in following co-sim result
    
    xsim c/rtl cosimulation result:    
    ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/HLS_shift_pattern1.png?raw=true)    
+
 
    we keep the same code logic but change the block and port level protocol into:    
    block-level-protocol: ap_ctrl_hs    
