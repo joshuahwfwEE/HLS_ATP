@@ -24,8 +24,8 @@ ap_ctrl_none mode:
    block-level-protocol: ap_ctrl_none    
    port-level-protocol: ap_none      
   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/hw_interface2.png?raw=true)  
-
-     
+  ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/shift_pattern_ap_ctrl_none_high_latency.png?raw=true)
+    
    notice: ap_ctrl_none support cosimulation in few cases, but this case doesn't supported, so I use ap_ctrl_hs for co-sim.    
 
    
