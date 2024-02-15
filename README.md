@@ -43,7 +43,13 @@ ap_ctrl_none mode:
    
    
    xsim c/rtl cosimulation result:  
-  ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/looptop_sim.png?raw=true)
+  ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/looptop_sim.png?raw=true)  
+
+  resource usage:  
+![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/usage1.png?raw=true)  
+![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/usage2.png?raw=true)
+
+
 
  in this case, I increase the task interval latency, and I reduced the period of updating the output.  
  it can be achieved by simply adding some buffer in the loop.  
