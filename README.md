@@ -13,7 +13,7 @@ we can configuration 2 mode:
 ap_ctrl_hs mode:  
    block-level-protocol: ap_ctrl_hs    
    port-level-protocol: ap_vld    
-   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/shift_pattern_ap_ctrl_hs.png?raw=true)   
+   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/hw_interface1.png?raw=true)   
    ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/shift_pattern_ap_ctrl_hs_high_latency.png?raw=true)  
    
 ap_ctrl_none mode:   
