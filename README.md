@@ -27,10 +27,33 @@ ap_ctrl_none mode:
    xsim c/rtl cosimulation result:    
    ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/HLS_shift_pattern1.png?raw=true)    
 
+    for (int i = 0; i < SHIFT_FLAG; i++) {  
+         shift_pattern_gen(top_led_o, tmp_o);  
+         tmp_o = *top_led_o;  
+    }  
 
+    
+    	this code will cause synthesis tool treat top_led_o as bi-directional port,  
+    	because of reading a value from a pointer often implies both read and write access,  
+    	it may lead to a bidirectional inference, the following code will cause top_led_o as a bi-directional port  
 
    you can check the resource usage and latency:  
-   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/synthesis_graph.png?raw=true)
+   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/synthesis_graph.png?raw=true)    
+   
+    	shift_pattern_gen(&temp_top_led_o, tmp_o);  
+        tmp_o = temp_top_led_o; // update tmp_o for the next iteration  
+        *top_led_o = temp_top_led_o; // assign the value to top_led_o  
+
+        // Swap the pointers to prepare for the next iteration  
+        led_t *temp_ptr = top_led_o;  
+        top_led_o = &temp_top_led_o;  
+        temp_top_led_o = *temp_ptr;  
+    }  
+}  
+    	the different part is this code will avoid synthesis tool treat top_led_o as bi-directional port,  
+    	because of reading a value from a pointer often implies both read and write access,  
+    	it may lead to a bidirectional inference, the following code will cause top_led_o as a bi-directional port  
+
 
    and then if we add extra loop at top without pipelined,  we will get:  
    ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/looptop.png?raw=true)  
