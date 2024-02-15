@@ -47,7 +47,7 @@ ap_ctrl_none mode:
 
   vivado simulation result(ap_ctrl_none):  
   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/sim1.png?raw=true)  
-  1 operation(shift_pattern_gen)'s operation time is 0.960us  
+  each loop (shift_pattern_gen)'s operation time is 0.960us  
 
   resource usage:  
 ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/usage1.png?raw=true)  
@@ -56,7 +56,9 @@ ap_ctrl_none mode:
 
 
  in this case, I increase the task interval latency, and I reduced the period of updating the output.  
- it can be achieved by simply adding some buffer in the loop.  
+ it can be achieved by simply adding some buffer in the loop.
+ ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/addbufinloopsyth.png?raw=true)  
+ 
  ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/addbufinloop.png?raw=true)  
 
  the difference of above 2 result is the task interval and the period of updating output value:   
@@ -65,7 +67,7 @@ ap_ctrl_none mode:
  
  result 2 update multiple times during a loop (the period of updating the output is 10ns(as same as the clk)),  
  and then assert idle and then restart the loop (idle period is 540.500ns)  
- ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/addbufinloopsyth.png?raw=true)  
+
 
  
 bidirection issue solution:   
