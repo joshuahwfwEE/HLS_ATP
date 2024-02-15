@@ -47,7 +47,7 @@ ap_ctrl_none mode:
 
   vivado simulation result(ap_ctrl_none):  
   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/sim1.png?raw=true)  
-  each loop (shift_pattern_gen)'s operation time is 0.960us  
+  each loop (shift_pattern_gen)'s operation time is 960ns  
 
   resource usage:  
 ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/usage1.png?raw=true)  
@@ -55,7 +55,9 @@ ap_ctrl_none mode:
 
 
 
- in this case, I increase the task interval latency, and I reduced the period of updating the output.  
+
+ if we add some buffer in loop:  
+ it will increase the task interval latency, and reduced the period of updating the output.  
  it can be achieved by simply adding some buffer in the loop.
  ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/addbufinloopsyth.png?raw=true)  
  
