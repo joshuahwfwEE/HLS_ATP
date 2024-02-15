@@ -1,5 +1,5 @@
-# HLS_ATP
-this repos gives an example for explain some HLS basic concept and a shift pattern generator lab, and talk about some data dependency issue and pipeline and how to use co-simulation  
+# HLS_lab1 shift pattern generator
+this repos gives an example for explain some HLS basic concept and a shift pattern generator lab, with pipeline concept and how to use co-simulation  
 
 
 1. shift pattern generator:
@@ -27,32 +27,10 @@ ap_ctrl_none mode:
    xsim c/rtl cosimulation result:    
    ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/HLS_shift_pattern1.png?raw=true)    
 
-    for (int i = 0; i < SHIFT_FLAG; i++) {  
-         shift_pattern_gen(top_led_o, tmp_o);  
-         tmp_o = *top_led_o;  
-    }  
-
-    
-    	this code will cause synthesis tool treat top_led_o as bi-directional port,  
-    	because of reading a value from a pointer often implies both read and write access,  
-    	it may lead to a bidirectional inference, the following code will cause top_led_o as a bi-directional port  
-
    you can check the resource usage and latency:  
    ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/synthesis_graph.png?raw=true)    
    
-    	shift_pattern_gen(&temp_top_led_o, tmp_o);  
-        tmp_o = temp_top_led_o; // update tmp_o for the next iteration  
-        *top_led_o = temp_top_led_o; // assign the value to top_led_o  
 
-        // Swap the pointers to prepare for the next iteration  
-        led_t *temp_ptr = top_led_o;  
-        top_led_o = &temp_top_led_o;  
-        temp_top_led_o = *temp_ptr;  
-    }  
-}  
-    	the different part is this code will avoid synthesis tool treat top_led_o as bi-directional port,  
-    	because of reading a value from a pointer often implies both read and write access,  
-    	it may lead to a bidirectional inference, the following code will cause top_led_o as a bi-directional port  
 
 
    and then if we add extra loop at top without pipelined,  we will get:  
@@ -75,6 +53,62 @@ ap_ctrl_none mode:
  and then assert idle and then restart the loop (idle period is 540.500ns)  
  ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/addbufinloopsyth.png?raw=true)  
 
+ 
+bidirection issue solution:   
+in ap_hs_mode:  
+ap_vald will affect the output result while ap_hs_none is always active.  
+we only focus on the logic function so we ignore ap_vald's corrective here.
+
+shift_pattern_gen_top( led_t *top_led_o, led_t first_value){  
+ 
+	led_t tmp_o; //first output  
+
+	shift_pattern_gen(&tmp_o, first_value);       //generate the first output value &tmp_o  
+ 
+    for (int i = 0; i < SHIFT_FLAG; i++) {       //SHIFT_FLAG=48  
+         shift_pattern_gen(top_led_o, tmp_o);                                    
+         tmp_o = *top_led_o;  
+    }  
+
+      //this code will cause synthesis tool treat top_led_o as bi-directional port,  
+    	//because of reading a value from a pointer often implies both read and write access,  
+    	//it may lead to a bidirectional inference, the following code will cause top_led_o as a bi-directional port  
+}  
+
+
+sol:  
+shift_pattern_gen_top( led_t *top_led_o, led_t first_value){  
+	led_t tmp_o;          //first output        
+	led_t temp_top_led_o; // temporary variable        
+
+	shift_pattern_gen(&tmp_o, first_value);       //generate the first output value &tmp_o  
+    
+   for (int i = 0; i < SHIFT_FLAG; i++) {        //SHIFT_FLAG=48    
+    	shift_pattern_gen(&temp_top_led_o, tmp_o);    
+        tmp_o = temp_top_led_o;         // update tmp_o for the next iteration    
+        *top_led_o = temp_top_led_o;    // assign the value to top_led_o, the ap_ovld will assert only when temp_top_led_o update to top_led_o  
+    }    
+
+        // Swap the pointers to prepare for the next iteration  
+        led_t *temp_ptr = top_led_o;  
+        top_led_o = &temp_top_led_o;  
+        temp_top_led_o = *temp_ptr;  
+    }  
+
+    	//the different part is this code will avoid synthesis tool treat top_led_o as bi-directional port,    
+    	//by add an extra pointer: temp_ptr replace original top_led_o  
+}  
+
+
+
+latency and area tradeoff:  
+1. long latency with less usage:
+   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/shift_pattern_ap_ctrl_none.png?raw=true)
+   
+2. low latency with more usage:
+   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/shift_pattern_ap_ctrl_none.png?raw=true)  
+
+
  vivado block design:  
  ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/shift_pattern_gen_loopwithbuffer_bd.png?raw=true)  
 
@@ -95,7 +129,7 @@ ap_ctrl_none mode:
    given an example design of testing the combination logic of above 2 module:    
     ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/design1_pattern_plus_foo.png?raw=true)    
 
-5. two foo:  
+5. double foo:  
    this module implement use 2 foo module,  
    double foo: implement 2 adder and 2 multiplier and 2 latch (task interval is lower but using larger amount resource)  
    foo reuse: implement 1 adder and 1 multiplier and 1 latch (task interval is higher but using smaller amount resource)  
