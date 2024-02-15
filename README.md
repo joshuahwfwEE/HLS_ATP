@@ -3,7 +3,7 @@ this repos gives an example for explain some HLS basic concept and a shift patte
 
 
 1. shift pattern generator:     
-   block-level-protocol: ap_ctrl_hs  
+   block-level-protocol: ap_ctrl_hs vs ap_ctrl_none 
    port-level-protocol: ap_vld      
    ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/shift_pattern_ap_ctrl_hs.png?raw=true)  
    
