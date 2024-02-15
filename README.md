@@ -61,7 +61,7 @@ ap_ctrl_none mode:
  
  vivado simulation result(ap_ctrl_none):  
  ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/sim2.png?raw=true)  
- each loop (shift_pattern_gen)'s operation time is 960ns  
+ each loop (shift_pattern_gen)'s operation time is 20.2ns  
  
  ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/addbufinloopsyth.png?raw=true)  
  
