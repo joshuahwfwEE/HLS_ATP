@@ -31,7 +31,7 @@ ap_ctrl_none mode:
    
 
 
-   you can check the resource usage and latency:  
+   the resource usage and latency of a single sub function:  
    ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/synthesis_graph.png?raw=true)    
    
 
