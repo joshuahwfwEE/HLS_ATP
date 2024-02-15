@@ -47,6 +47,7 @@ ap_ctrl_none mode:
 
   vivado simulation result(ap_ctrl_none):  
   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/sim1.png?raw=true)  
+  1 operation(shift_pattern_gen)'s operation time is 
 
   resource usage:  
 ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/usage1.png?raw=true)  
