@@ -55,10 +55,14 @@ ap_ctrl_none mode:
 
 
 
-
- if we add some buffer in loop:  
+  
  it will increase the task interval latency, and reduced the period of updating the output.  
- it can be achieved by simply adding some buffer in the loop.
+ it can be achieved by simply adding some buffer in the loop.  
+ 
+ vivado simulation result(ap_ctrl_none):  
+ ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/sim2.png?raw=true)  
+ each loop (shift_pattern_gen)'s operation time is 960ns  
+ 
  ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/addbufinloopsyth.png?raw=true)  
  
  ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/addbufinloop.png?raw=true)  
