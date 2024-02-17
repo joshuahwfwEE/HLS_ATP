@@ -8,13 +8,13 @@ this repos gives an example for explain some HLS basic concept and a shift patte
    3b'110 => 3b'101 => 3b'011 => 3b'110  //(6=>5=>3=>6) consistently while be given a constant 3b'110    
    3b'110 is the first given data to input led_i in top.v      
    
-we can configuration 2 mode:  
+we can configuration 2 block level protocol(which is used for determine the control method in top):    
 
 ap_ctrl_hs mode:  
    block-level-protocol: ap_ctrl_hs    
-   port-level-protocol: ap_vld    
-   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/hw_interface1.png?raw=true)   
-   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/shift_pattern_ap_ctrl_hs_high_latency.png?raw=true)  
+   port-level-protocol: ap_vld      
+   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/hw_interface1.png?raw=true)     
+   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/shift_pattern_ap_ctrl_hs_high_latency.png?raw=true)    
 
 because we set SHIFT_TIME=6 in testbench, so it repeat the loop for 6 times and then assert ap_idle high and stop the operation in following co-sim result  
 xsim c/rtl cosimulation result:      
