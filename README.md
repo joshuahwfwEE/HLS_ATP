@@ -17,6 +17,20 @@ ap_ctrl_hs mode:
    ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/shift_pattern_ap_ctrl_hs_high_latency.png?raw=true)    
 
 because we set SHIFT_TIME=6 in testbench, so it repeat the loop for 6 times and then assert ap_idle high and stop the operation in following co-sim result  
+
+#include "./../src/shift_pattern.h"  
+#include "stdio.h"  
+int main(){  
+        led_t first_value = 0x6; //given a initial value 6  
+        led_t top_led_o;  
+        const int SHIFT_TIME =6; //given the test period: 6 loop  
+        int i;  
+                    for(i=0;i<SHIFT_TIME;i++){  
+                    shift_pattern_gen_top( &top_led_o, first_value);  //&led_o: get the value which is stored in the memory of led_o pointer  
+                    fprintf(stdout,"shift out:%x\r\n", top_led_o&0x7);  
+                    }  
+          }  
+	  
 xsim c/rtl cosimulation result:      
    ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/HLS_shift_pattern1.png?raw=true)    
    
