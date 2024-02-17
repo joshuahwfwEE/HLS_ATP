@@ -47,7 +47,7 @@ ap_ctrl_none mode:
 
   vivado simulation result(ap_ctrl_none):  
   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/sim1.png?raw=true)  
-  each loop (shift_pattern_gen)'s operation time is 960ns  
+   each loop's operaion time in top is 960ns  
 
   resource usage:  
 ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/usage1.png?raw=true)  
@@ -56,21 +56,27 @@ ap_ctrl_none mode:
 
 
  if we want to reduced the period of updating the output and increase the task interval latency, how to do?  
- it can be achieved by simply adding some buffer in the loop.  
+ it can be achieved by simply make the pointer of output = submodule output's address  
  
+ top_led_o = &temp_top_led_o;  
+
+ 
+
+   
  vivado simulation result(ap_ctrl_none):  
  ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/sim2.png?raw=true)  
- each loop (shift_pattern_gen)'s operation time is 20.2ns  
+ each loop's operaion time in top is 20.2ns  
  
  ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/addbufinloopsyth.png?raw=true)  
  
  ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/addbufinloop.png?raw=true)    
- the period of updating the output is 10ns(as same as the clk) and then assert idle and then restart the loop  
- operation period is 960.667ns( from strat to idle), idle period is 540.500ns ( from idle to next start )   
+ the period of updating the output is 20ns(as same as the clk) and then assert idle and then restart the top function.    
+ operation period is 960.667ns( from strat to idle), which is:  each loop's operaion time in top * loop_cnt = 20ns *48 =960ns  
+ after top function's operation is done, and then assert idle signal, idle period is 540.500ns (from idle to next start(27 clk cycle)  
+ 
 
 
-
- the difference of above 2 result is the task interval and the period of updating output value:   
+the modifed code makes each loop's operaion time in top from 960ns into 20.2ns 
  
  result 1 update output once in each loop (the period of updating the output as the same as the period of a loop)  
  
