@@ -18,11 +18,11 @@ ap_ctrl_hs mode:
 
 because we set SHIFT_TIME=6 in testbench, so it repeat the loop for 6 times and then assert ap_idle high and stop the operation in following co-sim result  
 
-xsim c/rtl cosimulation result of shift_pattern_gen:        
+xsim c/rtl cosimulation result of a single sub function shift_pattern_gen:        
    ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/HLS_shift_pattern1.png?raw=true)    
 
 
-let's use alternaitve block level protocol:     
+if we use alternaitve block level protocol:       
 ap_ctrl_none mode:   
    block-level-protocol: ap_ctrl_none    
    port-level-protocol: ap_none      
@@ -34,16 +34,13 @@ ap_ctrl_none mode:
    
 
 
-   the resource usage and latency of a single sub function:  
+   the resource usage and latency of a single sub function shift_pattern_gen:  
    ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/synthesis_graph.png?raw=true)    
    
-
-
 
    and then if we add extra loop at top without pipelined,  we will get:  
    ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/looptop.png?raw=true)  
    we can notice the latency incresing, because we reuse the same resource again and again for 48 times( 2400/50=48 is the value of SHIFT_FLAG).
-   
    
    xsim c/rtl cosimulation result(ap_ctrl_hs):  
   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/looptop_sim.png?raw=true)  
