@@ -55,7 +55,7 @@ ap_ctrl_none mode:
 
 
 
- if we increase the task interval latency, and reduced the period of updating the output.  
+ if we want to reduced the period of updating the output and increase the task interval latency, how to do?  
  it can be achieved by simply adding some buffer in the loop.  
  
  vivado simulation result(ap_ctrl_none):  
