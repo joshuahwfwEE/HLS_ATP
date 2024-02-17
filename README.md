@@ -20,7 +20,9 @@ because we set SHIFT_TIME=6 in testbench, so it repeat the loop for 6 times and 
 
 xsim c/rtl cosimulation result of shift_pattern_gen:        
    ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/HLS_shift_pattern1.png?raw=true)    
-   
+
+
+let's use alternaitve block level protocol:     
 ap_ctrl_none mode:   
    block-level-protocol: ap_ctrl_none    
    port-level-protocol: ap_none      
