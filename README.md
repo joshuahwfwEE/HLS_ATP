@@ -18,7 +18,7 @@ ap_ctrl_hs mode:
 
 because we set SHIFT_TIME=6 in testbench, so it repeat the loop for 6 times and then assert ap_idle high and stop the operation in following co-sim result  
 
-xsim c/rtl cosimulation result:      
+xsim c/rtl cosimulation result of shift_pattern_gen:        
    ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/HLS_shift_pattern1.png?raw=true)    
    
 ap_ctrl_none mode:   
