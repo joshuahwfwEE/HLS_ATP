@@ -8,7 +8,7 @@ this repos gives an example for explain some HLS basic concept and a shift patte
    3b'110 => 3b'101 => 3b'011 => 3b'110  //(6=>5=>3=>6) consistently while be given a constant 3b'110    
    3b'110 is the first given data to input led_i in top.v      
    
-we can configuration 2 block level protocol(which is used for determine the control method in top):    
+we can configuration 2 block level protocol(which is used for determine the control method in top level):    
 
 ap_ctrl_hs mode:  
    block-level-protocol: ap_ctrl_hs    
