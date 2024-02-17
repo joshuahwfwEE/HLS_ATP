@@ -64,15 +64,19 @@ ap_ctrl_none mode:
  
  ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/addbufinloopsyth.png?raw=true)  
  
- ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/addbufinloop.png?raw=true)  
+ ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/addbufinloop.png?raw=true)    
+ the period of updating the output is 10ns(as same as the clk) and then assert idle and then restart the loop  
+ operation period is 960.667ns( from strat to idle), idle period is 540.500ns ( from idle to next start )   
+
+
 
  the difference of above 2 result is the task interval and the period of updating output value:   
  
  result 1 update output once in each loop (the period of updating the output as the same as the period of a loop)  
  
- result 2 update multiple times during a loop (the period of updating the output is 10ns(as same as the clk)),  
- and then assert idle and then restart the loop (idle period is 540.500ns)  
-
+ result 2 update multiple times during a loop (the period of updating the output is 10ns(as same as the clk)) and then assert idle and then restart the loop  
+ operation period is 960.667ns( from strat to idle), idle period is 540.500ns ( from idle to next start ) 
+ 
 
  
 bidirection issue solution:   
