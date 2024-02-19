@@ -130,30 +130,17 @@ shift_pattern_gen_top( led_t *top_led_o, led_t first_value){
     	//by add an extra pointer: temp_ptr replace original top_led_o  
 }  
 
-
-
-latency and area tradeoff:  
-1. long latency with less usage:
-   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/shift_pattern_ap_ctrl_none.png?raw=true)
-   
-2. low latency with more usage:
-   ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/shift_pattern_ap_ctrl_none.png?raw=true)  
-
-
  vivado block design:  
  ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/shift_pattern_gen_loopwithbuffer_bd.png?raw=true)  
 
  simulation result in vivado:  
- ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/shift_pattern_gen_loopwithbuffer_wcfg.png?raw=true)    
+ ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/shift_pattern_gen_loopwithbuffer_wcfg.png?raw=true)  
 
-   if we use more resource to implement this circult:
-   
+ 
 
+latency and area tradeoff:  
+pipline:  
 
-
-
-
-  
-
-   use unrolled and pipelined:
+ if we use more resource to implement this circult:   
+ use unrolled and pipelined:
    
