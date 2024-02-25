@@ -136,11 +136,5 @@ shift_pattern_gen_top( led_t *top_led_o, led_t first_value){
  simulation result in vivado:  
  ![alt text](https://github.com/joshuahwfwEE/HLS_ATP/blob/main/shift_pattern_gen_loopwithbuffer_wcfg.png?raw=true)  
 
- 
 
-latency and area tradeoff:  
-pipline:  
-
- if we use more resource to implement this circult:   
- use unrolled and pipelined:
    
