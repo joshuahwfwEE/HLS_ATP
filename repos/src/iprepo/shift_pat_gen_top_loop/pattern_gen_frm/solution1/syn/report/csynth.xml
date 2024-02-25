@@ -1,0 +1,380 @@
+<profile>
+    <ReportVersion>
+        <Version>2022.2</Version>
+    </ReportVersion>
+    <UserAssignments>
+        <unit>ns</unit>
+        <ProductFamily>virtexuplus</ProductFamily>
+        <Part>xcvu19p_CIV-fsva3824-2-e</Part>
+        <TopModelName>shift_pattern_gen_top</TopModelName>
+        <TargetClockPeriod>10.00</TargetClockPeriod>
+        <ClockUncertainty>2.70</ClockUncertainty>
+        <FlowTarget>vivado</FlowTarget>
+    </UserAssignments>
+    <PerformanceEstimates>
+        <PipelineType>no</PipelineType>
+        <SummaryOfTimingAnalysis>
+            <unit>ns</unit>
+            <EstimatedClockPeriod>1.284</EstimatedClockPeriod>
+        </SummaryOfTimingAnalysis>
+        <SummaryOfOverallLatency>
+            <unit>clock cycles</unit>
+            <Best-caseLatency>105</Best-caseLatency>
+            <Average-caseLatency>105</Average-caseLatency>
+            <Worst-caseLatency>105</Worst-caseLatency>
+            <Best-caseRealTimeLatency>1.050 us</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>1.050 us</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>1.050 us</Worst-caseRealTimeLatency>
+            <Interval-min>106</Interval-min>
+            <Interval-max>106</Interval-max>
+        </SummaryOfOverallLatency>
+    </PerformanceEstimates>
+    <AreaEstimates>
+        <Resources>
+            <FF>31</FF>
+            <LUT>178</LUT>
+            <BRAM_18K>0</BRAM_18K>
+            <DSP>0</DSP>
+            <URAM>0</URAM>
+        </Resources>
+        <AvailableResources>
+            <BRAM_18K>4320</BRAM_18K>
+            <DSP>3840</DSP>
+            <FF>8171520</FF>
+            <LUT>4085760</LUT>
+            <URAM>320</URAM>
+        </AvailableResources>
+    </AreaEstimates>
+    <InterfaceSummary>
+        <RtlPorts>
+            <name>ap_clk</name>
+            <Object>shift_pattern_gen_top</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_none</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_rst</name>
+            <Object>shift_pattern_gen_top</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_none</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>top_led_o</name>
+            <Object>top_led_o</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>ap_none</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>3</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>first_value</name>
+            <Object>first_value</Object>
+            <Type>scalar</Type>
+            <Scope/>
+            <IOProtocol>ap_none</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>3</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+    </InterfaceSummary>
+    <RTLDesignHierarchy>
+        <TopModule MAX_DEPTH="3">
+            <ModuleName>shift_pattern_gen_top</ModuleName>
+            <InstancesList>
+                <Instance>
+                    <InstName>grp_shift_pattern_gen_top_Pipeline_VITIS_LOOP_76_1_fu_40</InstName>
+                    <ModuleName>shift_pattern_gen_top_Pipeline_VITIS_LOOP_76_1</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>40</ID>
+                    <BindInstances>i_V_2_fu_84_p2</BindInstances>
+                </Instance>
+                <Instance>
+                    <InstName>grp_shift_pattern_gen_top_Pipeline_VITIS_LOOP_31_1_fu_47</InstName>
+                    <ModuleName>shift_pattern_gen_top_Pipeline_VITIS_LOOP_31_1</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>47</ID>
+                    <BindInstances>i_2_fu_93_p2</BindInstances>
+                </Instance>
+            </InstancesList>
+        </TopModule>
+    </RTLDesignHierarchy>
+    <ModuleInformation>
+        <Module>
+            <Name>shift_pattern_gen_top_Pipeline_VITIS_LOOP_76_1</Name>
+            <Loops>
+                <VITIS_LOOP_76_1/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>1.284</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>52</Best-caseLatency>
+                    <Average-caseLatency>52</Average-caseLatency>
+                    <Worst-caseLatency>52</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.520 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.520 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.520 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>52</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <VITIS_LOOP_76_1>
+                        <Name>VITIS_LOOP_76_1</Name>
+                        <Slack>7.30</Slack>
+                        <TripCount>50</TripCount>
+                        <Latency>50</Latency>
+                        <AbsoluteTimeLatency>0.500 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>1</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList/>
+                    </VITIS_LOOP_76_1>
+                </SummaryOfLoopLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>14</FF>
+                    <AVAIL_FF>8171520</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>84</LUT>
+                    <AVAIL_LUT>4085760</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>4320</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>3840</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>320</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_76_1" OPTYPE="add" PRAGMA="" RTLNAME="i_V_2_fu_84_p2" SOURCE="/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_fixed_base.h:813" URAM="0" VARIABLE="i_V_2"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>shift_pattern_gen_top_Pipeline_VITIS_LOOP_31_1</Name>
+            <Loops>
+                <VITIS_LOOP_31_1/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>1.093</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>50</Best-caseLatency>
+                    <Average-caseLatency>50</Average-caseLatency>
+                    <Worst-caseLatency>50</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.500 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.500 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.500 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>50</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <VITIS_LOOP_31_1>
+                        <Name>VITIS_LOOP_31_1</Name>
+                        <Slack>7.30</Slack>
+                        <TripCount>48</TripCount>
+                        <Latency>48</Latency>
+                        <AbsoluteTimeLatency>0.480 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>1</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList/>
+                    </VITIS_LOOP_31_1>
+                </SummaryOfLoopLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>11</FF>
+                    <AVAIL_FF>8171520</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>68</LUT>
+                    <AVAIL_LUT>4085760</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>4320</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>3840</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>320</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_31_1" OPTYPE="add" PRAGMA="" RTLNAME="i_2_fu_93_p2" SOURCE="src/shift_pattern.cpp:31" URAM="0" VARIABLE="i_2"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>shift_pattern_gen_top</Name>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>1.284</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>105</Best-caseLatency>
+                    <Average-caseLatency>105</Average-caseLatency>
+                    <Worst-caseLatency>105</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>1.050 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>1.050 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>1.050 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>106</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>31</FF>
+                    <AVAIL_FF>8171520</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>178</LUT>
+                    <AVAIL_LUT>4085760</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>4320</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>3840</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>320</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+        </Module>
+    </ModuleInformation>
+    <FIFOInformation/>
+    <UserConfigCommands/>
+    <Args>
+        <Arg ArgName="top_led_o" index="0" direction="out" srcType="ap_fixed&lt;3, 3, AP_TRN, AP_WRAP, 0&gt;*" srcSize="8">
+            <hwRefs>
+                <hwRef type="port" interface="top_led_o" name="top_led_o" usage="data" direction="out"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="first_value" index="1" direction="in" srcType="ap_fixed&lt;3, 3, AP_TRN, AP_WRAP, 0&gt;" srcSize="8">
+            <hwRefs>
+                <hwRef type="port" interface="first_value" name="first_value" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+    </Args>
+    <Interfaces>
+        <Interface InterfaceName="ap_clk" type="clock" busTypeName="clock" mode="slave">
+            <busParams>
+                <busParam busParamName="ASSOCIATED_RESET">ap_rst</busParam>
+            </busParams>
+            <portMaps>
+                <portMap portMapName="ap_clk">CLK</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_clk</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="ap_rst" type="reset" busTypeName="reset" mode="slave">
+            <busParams>
+                <busParam busParamName="POLARITY">ACTIVE_HIGH</busParam>
+            </busParams>
+            <portMaps>
+                <portMap portMapName="ap_rst">RST</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_rst</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="top_led_o" type="data" busTypeName="data" protocol="ap_none" mode="master" dataWidth="3">
+            <portMaps>
+                <portMap portMapName="top_led_o">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>top_led_o</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_none" register_option="0" argName="top_led_o"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="first_value" type="data" busTypeName="data" protocol="ap_none" mode="slave" dataWidth="3">
+            <portMaps>
+                <portMap portMapName="first_value">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>first_value</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_none" register_option="0" argName="first_value"/>
+            </constraints>
+        </Interface>
+    </Interfaces>
+    <ReportHWInterface>
+        <section name="HW Interfaces" level="0">
+            <item name="Other Ports">
+                <table isCollapsed="0">
+                    <keys size="3">Interface, Mode, Bitwidth</keys>
+                    <column name="first_value">ap_none, 3, , </column>
+                    <column name="top_led_o">ap_none, 3, , </column>
+                </table>
+            </item>
+            <item name="TOP LEVEL CONTROL">
+                <table isCollapsed="0">
+                    <keys size="3">Interface, Type, Ports</keys>
+                    <column name="ap_clk">clock, ap_clk, </column>
+                    <column name="ap_rst">reset, ap_rst, </column>
+                    <column name="ap_ctrl">ap_ctrl_none, , </column>
+                </table>
+            </item>
+        </section>
+    </ReportHWInterface>
+    <ReportSWInterface>
+        <section name="SW I/O Information" level="0">
+            <item name="Top Function Arguments">
+                <table isCollapsed="1">
+                    <keys size="3">Argument, Direction, Datatype</keys>
+                    <column name="top_led_o">out, ap_fixed&lt;3 3 AP_TRN AP_WRAP 0&gt;*</column>
+                    <column name="first_value">in, ap_fixed&lt;3 3 AP_TRN AP_WRAP 0&gt;</column>
+                </table>
+            </item>
+            <item name="SW-to-HW Mapping">
+                <table isCollapsed="1">
+                    <keys size="3">Argument, HW Interface, HW Type</keys>
+                    <column name="top_led_o">top_led_o, port, , </column>
+                    <column name="first_value">first_value, port, , </column>
+                </table>
+            </item>
+        </section>
+    </ReportSWInterface>
+    <PragmaReport>
+        <Pragma type="interface" location="src/shift_pattern.cpp:20" status="valid" parentFunction="shift_pattern_gen_top" variable="return" isDirective="0" options="ap_ctrl_none port=return"/>
+        <Pragma type="interface" location="src/shift_pattern.cpp:21" status="valid" parentFunction="shift_pattern_gen_top" variable="top_led_o" isDirective="0" options="ap_none port=top_led_o"/>
+        <Pragma type="interface" location="src/shift_pattern.cpp:22" status="valid" parentFunction="shift_pattern_gen_top" variable="first_value" isDirective="0" options="ap_none port=first_value"/>
+        <Pragma type="interface" location="src/shift_pattern.cpp:67" status="valid" parentFunction="shift_pattern_gen" variable="return" isDirective="0" options="ap_ctrl_none port=return"/>
+        <Pragma type="interface" location="src/shift_pattern.cpp:68" status="valid" parentFunction="shift_pattern_gen" variable="led_i" isDirective="0" options="ap_none port=led_i"/>
+        <Pragma type="interface" location="src/shift_pattern.cpp:69" status="valid" parentFunction="shift_pattern_gen" variable="led_o" isDirective="0" options="ap_none port=led_o"/>
+    </PragmaReport>
+</profile>
+
